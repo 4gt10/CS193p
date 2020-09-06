@@ -9,5 +9,24 @@
 import Foundation
 
 final class ContentViewModel {
+    private var model: GameModel<String> = createGame()
+        
+    static func createGame() -> GameModel<String> {
+        let emojis = ["👻", "🎃", "🕷"]
+        return GameModel(numberOfPairsOfCards: emojis.count) { pairIndex in
+            return emojis[pairIndex]
+        }
+    }
     
+    // MARK: - Accessors
+    
+    var cards: [GameModel<String>.Card] {
+        model.cards
+    }
+    
+    // MARK: - Intents
+    
+    func choose(card: GameModel<String>.Card) {
+        model.choose(card: card)
+    }
 }
