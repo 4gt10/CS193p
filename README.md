@@ -1,2 +1,2 @@
 # CS193p
-CS193p homeworks, projects, etc
+CS193p assignments
