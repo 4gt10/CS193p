@@ -6,10 +6,10 @@
 //  Copyright © 2020 Артур Чернов. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
-final class ContentViewModel {
-    private var model: GameModel<String> = createGame()
+final class ContentViewModel: ObservableObject {
+    @Published private var model: GameModel<String> = createGame()
         
     static func createGame() -> GameModel<String> {
         let emojis = ["👻", "🎃", "🕷"]

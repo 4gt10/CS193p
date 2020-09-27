@@ -9,13 +9,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    var viewModel: ContentViewModel
+    @ObservedObject var viewModel: ContentViewModel
     var body: some View {
         HStack {
-            ForEach(viewModel.cards) { card in
+            Grid(viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
-                    self.viewModel.choose(card: card)
+                    viewModel.choose(card: card)
                 }
+                .padding()
             }
         }
             .foregroundColor(.orange)
@@ -34,8 +35,8 @@ struct CardView: View {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(lineWidth: 3)
                 Text(card.content)
-                    .font(.largeTitle)
-            } else {
+                    .font(.system(size: 84))
+            } else if !card.isMatched {
                 RoundedRectangle(cornerRadius: 10)
                     .fill()
             }

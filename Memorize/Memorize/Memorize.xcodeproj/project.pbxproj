@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE291161252073E6004A859C /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE291160252073E6004A859C /* Grid.swift */; };
 		BE99C1522504BF4100479B3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99C1512504BF4100479B3F /* AppDelegate.swift */; };
 		BE99C1542504BF4100479B3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99C1532504BF4100479B3F /* SceneDelegate.swift */; };
 		BE99C1562504BF4100479B3F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99C1552504BF4100479B3F /* ContentView.swift */; };
@@ -15,9 +16,11 @@
 		BE99C15E2504BF4200479B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE99C15C2504BF4200479B3F /* LaunchScreen.storyboard */; };
 		BE99C1662504C17200479B3F /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99C1652504C17200479B3F /* GameModel.swift */; };
 		BE99C1682504C18B00479B3F /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE99C1672504C18B00479B3F /* ContentViewModel.swift */; };
+		BEF5D292252079D4000B13D8 /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF5D291252079D4000B13D8 /* GridLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE291160252073E6004A859C /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		BE99C14E2504BF4100479B3F /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE99C1512504BF4100479B3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE99C1532504BF4100479B3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		BE99C15F2504BF4200479B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE99C1652504C17200479B3F /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		BE99C1672504C18B00479B3F /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		BEF5D291252079D4000B13D8 /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE29115F252071DE004A859C /* Grid */ = {
+			isa = PBXGroup;
+			children = (
+				BEF5D291252079D4000B13D8 /* GridLayout.swift */,
+				BE291160252073E6004A859C /* Grid.swift */,
+			);
+			path = Grid;
+			sourceTree = "<group>";
+		};
 		BE99C1452504BF4100479B3F = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +103,7 @@
 		BE99C16A2504C1A200479B3F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BE29115F252071DE004A859C /* Grid */,
 				BE99C16B2504C1A900479B3F /* ContentView */,
 			);
 			path = UI;
@@ -197,6 +211,8 @@
 				BE99C1542504BF4100479B3F /* SceneDelegate.swift in Sources */,
 				BE99C1562504BF4100479B3F /* ContentView.swift in Sources */,
 				BE99C1682504C18B00479B3F /* ContentViewModel.swift in Sources */,
+				BEF5D292252079D4000B13D8 /* GridLayout.swift in Sources */,
+				BE291161252073E6004A859C /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
