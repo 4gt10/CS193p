@@ -11,20 +11,37 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var viewModel: ContentViewModel
     var body: some View {
-        HStack {
-            Grid(viewModel.cards) { card in
-                CardView(card: card).onTapGesture {
-                    viewModel.choose(card: card)
+        VStack {
+            if viewModel.cards.allSatisfy({ $0.isMatched }) {
+                Text("🥳 Congratulations 🥳")
+                    .font(.largeTitle)
+            } else {
+                Grid(viewModel.cards) { card in
+                    CardView(card: card).onTapGesture {
+                        withAnimation(.linear) {
+                            try? Result { viewModel.choose(card: card) }
+                                .get()
+                        }
+                    }
+                    .padding()
                 }
-                .padding()
+            }
+            Button("Start a New Game") {
+                withAnimation(.linear) {
+                    try? Result { viewModel.newGame() }
+                        .get()
+                }
             }
         }
-            .foregroundColor(.orange)
-            .padding()
+        .foregroundColor(.orange)
+        .padding()
     }
 }
 
 struct CardView: View {
+    private enum Constant {
+        static let flipAnimationDuration: Double = 0.75
+    }
     var card: GameModel<String>.Card
     var body: some View {
         ZStack {
@@ -33,7 +50,7 @@ struct CardView: View {
                     .fill()
                     .foregroundColor(.white)
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(lineWidth: 3)
+                    .stroke(lineWidth: 2)
                 Text(card.content)
                     .font(.system(size: 84))
             } else if !card.isMatched {
@@ -41,6 +58,9 @@ struct CardView: View {
                     .fill()
             }
         }
+        .animation(Animation.linear.delay(Constant.flipAnimationDuration / Double(card.isFaceUp ? 2 : 4)))
+        .rotation3DEffect(.degrees(card.isFaceUp ? 0 : 180), axis: (0, 1, 0))
+        .animation(Animation.linear(duration: Constant.flipAnimationDuration))
     }
 }
 
